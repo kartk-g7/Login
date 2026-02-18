@@ -12,17 +12,18 @@ function App() {
     <AuthProvider>
       <Toaster position="top-right" />
       <Routes>
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           }
         />
-        {/* Redirect any unknown routes to login */}
+
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </AuthProvider>

@@ -28,8 +28,8 @@ export default function Register() {
                 formData.username,
                 formData.phone
             );
-            toast.success("Account created successfully!");
-            navigate("/");
+            toast.success("Account created successfully");
+            navigate("/login");
         } catch (error) {
             toast.error(error.message);
         }

@@ -36,6 +36,9 @@ export function AuthProvider({ children }) {
             createdAt: new Date().toISOString(),
         });
 
+        // Immediately sign out to prevent auto-login
+        await signOut(auth);
+
         return user;
     }
 
@@ -48,18 +51,8 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user);
-            if (user) {
-                // Fetch user data from Firestore
-                const docRef = doc(db, "users", user.uid);
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
-                    setUserData(docSnap.data());
-                }
-            } else {
-                setUserData(null);
-            }
             setLoading(false);
         });
 

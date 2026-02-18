@@ -21,8 +21,8 @@ export default function Login() {
         setLoading(true);
         try {
             await login(formData.email, formData.password);
-            toast.success("Logged in successfully!");
-            navigate("/");
+            toast.success("Login successful");
+            navigate("/dashboard");
         } catch (error) {
             toast.error(error.message);
         }
