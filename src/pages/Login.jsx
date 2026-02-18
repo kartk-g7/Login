@@ -30,32 +30,34 @@ export default function Login() {
     }
 
     return (
-        <div className="glass-card">
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit" disabled={loading}>
-                    {loading ? "Logging in..." : "Login"}
-                </button>
-            </form>
-            <p style={{ marginTop: "15px" }}>
-                Don't have an account? <Link to="/register">Register</Link>
-            </p>
+        <div className="auth-wrapper">
+            <div className="glass-card">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Logging in..." : "Login"}
+                    </button>
+                </form>
+                <p style={{ marginTop: "15px" }}>
+                    Don't have an account? <Link to="/register">Register</Link>
+                </p>
+            </div>
         </div>
     );
 }

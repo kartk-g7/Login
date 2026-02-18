@@ -37,48 +37,50 @@ export default function Register() {
     }
 
     return (
-        <div className="glass-card">
-            <h2>Register</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={formData.username}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit" disabled={loading}>
-                    {loading ? "Creating Account..." : "Register"}
-                </button>
-            </form>
-            <p style={{ marginTop: "15px" }}>
-                Already have an account? <Link to="/login">Login</Link>
-            </p>
+        <div className="auth-wrapper">
+            <div className="glass-card">
+                <h2>Register</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Creating Account..." : "Register"}
+                    </button>
+                </form>
+                <p style={{ marginTop: "15px" }}>
+                    Already have an account? <Link to="/login">Login</Link>
+                </p>
+            </div>
         </div>
     );
 }

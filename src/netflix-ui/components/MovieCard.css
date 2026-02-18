@@ -1,0 +1,39 @@
+.movie-card {
+    width: 200px;
+    /* Fixed width for standard card */
+    margin-right: 10px;
+    transition: transform 450ms;
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card-large {
+    width: 250px;
+    /* Larger for top rows */
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.movie-info {
+    display: none;
+    /* Hide title by default like Netflix */
+    font-size: 0.8rem;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.movie-card:hover .movie-info {
+    display: block;
+    /* Show title on hover? Or keep hidden to be minimal */
+}
