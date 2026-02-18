@@ -22,11 +22,22 @@ const Dashboard = () => {
 
     return (
         <div className="App">
-            <button onClick={handleLogout} className="logout-btn">
-                Logout
-            </button>
+            <header className="navbar">
+                <div className="navbar-left">
+                    <h1 className="logo" style={{ color: '#e50914', fontSize: '30px', fontWeight: 'bold' }}>NETFLIX</h1>
+                </div>
+
+                <div className="navbar-right">
+                    <button className="logout-btn" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+            </header>
+
             <Sidebar />
-            <HeroBanner />
+            <div className="hero">
+                <HeroBanner />
+            </div>
             <Row title="Trending Now" fetchUrl={requests.fetchTrending} isLargeRow />
             <Row title="New Releases" fetchUrl="2024" />
             <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
