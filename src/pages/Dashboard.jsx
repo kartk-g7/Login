@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import Sidebar from '../netflix-ui/components/Sidebar';
 import HeroBanner from '../netflix-ui/components/HeroBanner';
 import Row from '../netflix-ui/components/Row';
@@ -6,8 +8,23 @@ import { requests } from '../netflix-ui/services/api';
 import '../netflix-ui/Netflix.css';
 
 const Dashboard = () => {
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await logout();
+            navigate("/login");
+        } catch (error) {
+            console.error("Failed to log out", error);
+        }
+    };
+
     return (
         <div className="App">
+            <button onClick={handleLogout} className="logout-btn">
+                Logout
+            </button>
             <Sidebar />
             <HeroBanner />
             <Row title="Trending Now" fetchUrl={requests.fetchTrending} isLargeRow />

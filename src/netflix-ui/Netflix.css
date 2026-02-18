@@ -77,3 +77,22 @@ a {
 ul {
   list-style: none;
 }
+/* Logout Button Styles */
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
