@@ -14,7 +14,8 @@ const Dashboard = () => {
     const handleLogout = async () => {
         try {
             await logout();
-            navigate("/login");
+            localStorage.removeItem("user");
+            navigate("/");
         } catch (error) {
             console.error("Failed to log out", error);
         }
